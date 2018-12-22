@@ -18,24 +18,25 @@
     </header>
     <div id="view">
         <div id="players">
-            <button id= "red">Red</button>
-            <button id= "blue">Blue</button>
+            <button id= "red"><i class="fas fa-user-slash"></i></button>
+            <button id= "blue"><i class="fas fa-user-slash"></i></button>
         </div>
         <div id="choices">
-                <button id= "ROCK">ROCK</button>
-                <button id= "PAPER">PAPER</button>
-                <button id= "SCISSORS">SCISSORS</button>
+                <button id= "ROCK"><i class="fas fa-hand-rock"></i></button>
+                <button id= "PAPER"><i class="fas fa-hand-paper"></i></button>
+                <button id= "SCISSORS"><i class="fas fa-hand-scissors"></i></button>
         </div>
         <div id="score">
-            <p>Wins:</p>
-            <p>Losses:</p>
-            <p>Ties:</p>
+            <p><i class="fas fa-laugh"></i>Wins:</p>
+            <p><i class="fas fa-sad-cry"></i>Losses:</p>
+            <p><i class="fas fa-grimace"></i>Ties:</p>
         </div>
     </div>
     <div id="chatview">
         <div id="chattext"></div>
         <form id="chattype">
-            <input type="submit" name="Chat" value="Chat">
+            <!-- <input type="submit" class="far fa-comments"><i class="far fa-comments"></i> -->
+            <button type="submit"><i class="far fa-comments"></i></button>
             <input type="text" name="texttype">
         </form>
     </div>
@@ -55,7 +56,12 @@
                 messagingSenderId: "777908442907"
             };
             firebase.initializeApp(config);
+            var database = firebase.database();
+            database.ref().on( "value", function(snapshot){
+                console.log(snapshot.val());
+            });
         // set page initial state
+
             // var playerselect = $("<button>").addClass(playerselect);
             // $("#players")
         // Listen for player(s)
