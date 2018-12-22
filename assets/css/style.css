@@ -1,10 +1,21 @@
 body{
     background-color: orange;
     color: white;
-    font-family: 
+    font-family: 'Baloo', cursive;
 }
 header{
 
+    text-align: center;
+    font-size: 75px;
+    border-radius: 25px;
+    margin: 10px, 50px;
+    padding: 20px;
+    background-color: rgb(248, 221, 170)
+}
+footer{
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+    font-size: 15px;
 }
 /* 
 font-family: 'Paytone One', sans-serif;

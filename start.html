@@ -6,19 +6,59 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo|Montserrat+Alternates|Paytone+One" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
   </head>
   <body>
     <header>
       <h1>R.P.S. - Online</h1>  
     </header>
-    <div id="Players">
-
+    <div id="view">
+        <div id="players">
+            <button id= "blue">Blue</button>
+            <button id= "red">Red</button>
+        </div>
+        <div id="choices">
+                <button id= "ROCK">ROCK</button>
+                <button id= "PAPER">PAPER</button>
+                <button id= "SCISSORS">SCISSORS</button>
+        </div>
+        <div id="score">
+            <p>Wins:</p>
+            <p>Losses:</p>
+            <p>Ties:</p>
+        </div>
     </div>
-
+    <div id="chatview">
+        <div id="chattext"></div>
+        <form id="chattype"></form>
+    </div>
+    <footer>
+        <p>Rutgers Bootcamp (Unit-7) by John Maguire 2018</p>
+    </footer>
     <script>
-
+        //set Doc-ready for a stable page. (multiple scripts and style sheets need to be in place first) 
+        $( document ).ready(function() {
+        // Initialize (My) Firebase
+            var config = {
+                apiKey: "AIzaSyBkRMbFPFDrP9Kx3ovEwcVgEJlCCWdxXxA",
+                authDomain: "bootcamp-7-2-1.firebaseapp.com",
+                databaseURL: "https://bootcamp-7-2-1.firebaseio.com",
+                projectId: "bootcamp-7-2-1",
+                storageBucket: "bootcamp-7-2-1.appspot.com",
+                messagingSenderId: "777908442907"
+            };
+            firebase.initializeApp(config);
+        // set page initial state
+            var playerselect = $("<button>").addClass(playerselect);
+            $("#players")
+        // Listen for player(s)
+        // Players start game, chat unlocks
+        // gamestate for each round, scoreboard updates
+        // Player(s) leaves, chat resets, begin game wait for new player(s)
+        });
     </script>
   <body>
 </html>
