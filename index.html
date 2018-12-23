@@ -18,7 +18,7 @@
     </header>
     <div id="view">
         <div id="players">
-            <button id= "red"><i class="fas fa-user-slash"></i></button>
+            <button id= "red"><i id="RED" class="fas fa-user-slash"></i></button>
             <button id= "blue"><i class="fas fa-user-slash"></i></button>
         </div>
         <div id="choices">
@@ -36,7 +36,7 @@
         <div id="chattext"></div>
         <form id="chattype">
             <!-- <input type="submit" class="far fa-comments"><i class="far fa-comments"></i> -->
-            <button type="submit"><i class="far fa-comments"></i></button>
+            <button type="submit" id="talkie"><i class="far fa-comments"></i></button>
             <input type="text" name="texttype">
         </form>
     </div>
@@ -44,8 +44,17 @@
         <p>Rutgers Bootcamp (Unit-7) by John Maguire 2018</p>
     </footer>
     <script>
+        //Useing Google fonts, and FontAWSOME! details to attemp fast page response to make up for Firebase lag.
+        // (assumed, probably won't matter, but they're also easy and cute!) 
         //set Doc-ready for a stable page. (multiple scripts and style sheets need to be in place first) 
         $( document ).ready(function() {
+        //some global varables
+        var banter = ""
+        var playerred = false
+        var playerblue = false
+        var redscore = [0,0,0]
+        var bluescore = [0,0,0]
+        var SHOOT = ""
         // Initialize (My) Firebase
             var config = {
                 apiKey: "AIzaSyBkRMbFPFDrP9Kx3ovEwcVgEJlCCWdxXxA",
@@ -59,7 +68,21 @@
             var database = firebase.database();
             database.ref().on( "value", function(snapshot){
                 console.log(snapshot.val());
+
+
+
+                //console.log(snapshot.val(PLAYERRED));
+            // if (snapshot.val(PLAYERRED)){
+            //     $("#RED").attr("class","fas fa-user-circle")
+            // };
             });
+        //    console.log(database.PLAYERRED)
+        //     if (database.PLAYERRED){
+        //         $("#RED").html('<i class="fas fa-user-circle"></i>')
+        //     };
+            // } || snapshot.PLAYERBLUE) {
+
+            // }
         // set page initial state
 
             // var playerselect = $("<button>").addClass(playerselect);
